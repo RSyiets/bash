@@ -1,6 +1,5 @@
 #!/bin/bash
 
-alias dice='~/app/dice.exe'
 alias nginx='/etc/init.d/nginx'
 alias shutdown='sudo /sbin/shutdown -h now'
 alias reboot='sudo /sbin/shutdown -r now'
