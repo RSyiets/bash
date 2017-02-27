@@ -1,0 +1,24 @@
+#!/bin/bash
+
+alias dice='~/app/dice.exe'
+alias nginx='/etc/init.d/nginx'
+alias shutdown='sudo /sbin/shutdown -h now'
+alias reboot='sudo /sbin/shutdown -r now'
+alias vimt='vim -c NERDTree'
+alias blackout='timeout 1 yes ""'
+
+# Set a clock by JMT.
+alias setclock='ntpdate -v ntp.nict.jp'
+
+alias remove='rm -i'
+alias copy='cp -i'
+alias move='mv -i'
+
+alias ..='cd ../; echo "---------------";'
+
+cdls()
+{
+  builtin cd "$@" && ls
+}
+alias cd='cdls'
+

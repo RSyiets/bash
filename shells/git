@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function gc(){
+  git commit -m "$*"
+}
+
+alias g='git'
+alias ga='git add'
+alias gb='git branch'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gl='git log'
+alias gp='git pull'
+alias gs='git status'
+alias gst='git stash'
+#alias gplo='git pull origin master'
+alias gbv='git branch -vv'
+
