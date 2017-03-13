@@ -14,6 +14,8 @@ alias copy='cp -i'
 alias move='mv -i'
 
 alias ..='cd ../; echo "---------------";'
+alias ...='.. ..'
+alias ....='.. .. ..'
 
 cdls()
 {
