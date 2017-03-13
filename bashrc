@@ -114,5 +114,6 @@ fi
 
 source .shells/git
 source .shells/alias
+source .shells/local
 
 PS1='[\u@\h \W]\$ '
