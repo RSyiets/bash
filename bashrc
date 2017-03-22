@@ -114,6 +114,8 @@ fi
 
 source .shells/git
 source .shells/alias
-source .shells/local
+if [ -e .shells/local ]; then
+  source .shells/local
+fi
 
 PS1='[\u@\h \W]\$ '
