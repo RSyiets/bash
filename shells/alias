@@ -5,7 +5,7 @@ alias shutdown='sudo /sbin/shutdown -h now'
 alias reboot='sudo /sbin/shutdown -r now'
 alias vimt='vim -c NERDTree'
 alias blackout='timeout 1 yes ""'
-
+alias blue='echo -e "\e[44m"; echo -e "\e[m"'
 # Set a clock by JMT.
 alias setclock='ntpdate -v ntp.nict.jp'
 
