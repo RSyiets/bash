@@ -49,6 +49,9 @@ set background=dark "配色の変更
 colorscheme desert "カラースキーマ
 highlight LineNr ctermfg=darkgray "行番号の色
 
+"ビープ音
+set visualbell "鳴らないようにする
+
 "検索関連設定
 set ignorecase "大文字/小文字の区別なく検索する
 set smartcase "検索文字列に大文字が含まれている場合は区別して検索する
