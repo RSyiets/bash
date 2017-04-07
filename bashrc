@@ -118,4 +118,4 @@ if [ -e .shells/local ]; then
   source .shells/local
 fi
 
-PS1='[\u@\h \W]\$ '
+PS1='\[\e[38;5;181m\e[40m\][\u@\h \W]\[\e[0m\]\$ '
