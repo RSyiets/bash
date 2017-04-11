@@ -89,6 +89,7 @@ cnoremap tree NERDTree
 cnoremap touch !command touch
 cnoremap copy !command cp -i
 cnoremap remove !command rm -i
+cnoremap git !command git
 
 "行末までヤンク
 nnoremap Y y$
