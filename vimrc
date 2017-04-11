@@ -86,9 +86,9 @@ nnoremap <C-f> <C-u>
 cnoremap tree NERDTree
 
 "unixコマンド
-cnoremap touch !command touch
-cnoremap copy !command cp -i
-cnoremap remove !command rm -i
+cnoremap mk !command touch
+cnoremap cp !command cp -i
+cnoremap rm !command rm -i
 cnoremap git !command git
 
 "行末までヤンク
