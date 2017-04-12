@@ -7,6 +7,7 @@ function gc(){
 alias g='git'
 alias ga='git add'
 alias gb='git branch'
+alias gca='git commit --amend'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gl='git log'
