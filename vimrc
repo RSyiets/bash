@@ -86,6 +86,7 @@ nnoremap <C-f> <C-u>
 cnoremap tree NERDTree
 
 "unixコマンド
+cnoremap cmd !command<Space>
 cnoremap mk !command touch
 cnoremap cp !command cp -i
 cnoremap rm !command rm -i
