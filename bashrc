@@ -119,3 +119,8 @@ if [ -e .shells/local ]; then
 fi
 
 PS1='\[\e[38;5;181m\e[40m\][\u@\h \W]\[\e[0m\]\$ '
+
+if [ -e remilia.sh ]; then
+  ./remilia.sh
+fi
+
