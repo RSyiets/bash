@@ -4,6 +4,20 @@ function gc(){
   git commit -m "$*"
 }
 
+function git(){
+  if [ "$1" = "fo" ]; then
+    ~/bin/git-foresta --style=10 | less -RCS
+  elif [ "$1" = "fa" ]; then
+    ~/bin/git-foresta --all --style=10 | less -RCS
+  elif [ "$1" = "fox" ]; then
+    ~/bin/git-foresta --style=10 | less -RCSX
+  elif [ "$1" = "fax" ]; then
+    ~/bin/git-foresta --all --style=10 | less -RCSX
+  else
+    command git "$@"
+  fi
+}
+
 alias g='git'
 alias ga='git add'
 alias gb='git branch'
