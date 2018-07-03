@@ -13,6 +13,8 @@ function git(){
     ~/bin/git-foresta --style=10 | less -RCSX
   elif [ "$1" = "fax" ]; then
     ~/bin/git-foresta --all --style=10 | less -RCSX
+  elif [ "$1" = "op" ]; then
+    git --no-pager log -1 | head -1 | cut -d " " -f 2
   else
     command git "$@"
   fi
