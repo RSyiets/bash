@@ -17,6 +17,21 @@ alias ..='cd ../; echo "---------------";'
 alias ...='.. ..'
 alias ....='.. .. ..'
 
+lf()
+{
+  while [ $1 ]
+  do
+    if [ "${1:0:1}" = "-" ]; then
+      local OPT="$OPT $1"
+    else
+      local ARGS="$ARGS $1"
+    fi
+    shift
+  done
+
+  ls -d $(find $ARGS -maxdepth 1) | xargs readlink -f | xargs ls -dlh --color=auto $OPT
+}
+
 cdls()
 {
   builtin cd "$@" && ls
