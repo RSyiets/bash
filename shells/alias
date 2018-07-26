@@ -4,7 +4,6 @@ alias nginx='/etc/init.d/nginx'
 alias shutdown='sudo /sbin/shutdown -h now'
 alias reboot='sudo /sbin/shutdown -r now'
 alias vimt='vim -c NERDTree'
-alias blackout='timeout 1 yes ""'
 alias blue='echo -e "\e[44m"; echo -e "\e[40m"'
 # Set a clock by JMT.
 alias setclock='ntpdate -v ntp.nict.jp'
@@ -16,6 +15,14 @@ alias move='mv -i'
 alias ..='cd ../; echo "---------------";'
 alias ...='.. ..'
 alias ....='.. .. ..'
+
+blackout()
+{
+  tput -S << EOF
+clear
+cup `tput cols` 0
+EOF
+}
 
 hs()
 {
