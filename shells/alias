@@ -17,6 +17,16 @@ alias ..='cd ../; echo "---------------";'
 alias ...='.. ..'
 alias ....='.. .. ..'
 
+hs()
+{
+  expr "$2" + 1 > /dev/null 2>&1
+  if [ $? -lt 2 ]; then
+    history | grep -E "$1" | tail -$2
+  else
+    history | grep -E "$1" | tail
+  fi
+}
+
 lf()
 {
   while [ $1 ]
