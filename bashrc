@@ -89,6 +89,7 @@ fi
 
 # some more ls aliases
 alias ll='ls -lh'
+alias lg='ls -g'
 alias la='ls -A'
 alias l='ls -CF'
 
