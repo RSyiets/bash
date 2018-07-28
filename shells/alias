@@ -1,5 +1,7 @@
 #!/bin/bash
 
+alias le='less -RCS'
+alias lx='less -RCSX'
 alias nginx='/etc/init.d/nginx'
 alias shutdown='sudo /sbin/shutdown -h now'
 alias reboot='sudo /sbin/shutdown -r now'
