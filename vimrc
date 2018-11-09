@@ -21,6 +21,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides' "インデントの視覚化
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'leafgarland/typescript-vim'
 
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
@@ -155,4 +156,7 @@ call smartinput#define_rule({
 	\   'input' : '<Bar><Bar><Left>',
   \   'filetype' : ['ruby']
   \    })
+
+"TypeScriptのシンタックスハイライト
+autocmd BufRead,BufNewFile *.ts set filetype=typescript
 
