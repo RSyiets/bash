@@ -80,35 +80,35 @@ let g:syntastic_ruby_checkers=['rubocop']
 "全てのウインドウを閉じる
 nnoremap qa :qall<CR>
 
-"上移動を片手でできるように
+"上半ページ移動を片手でできるように
 nnoremap <C-f> <C-u>
+nnoremap <C-u> <C-f>
 
 "ディレクトリのツリー表示
 cnoremap tree NERDTree
 
 "unixコマンド
-cnoremap cmd !command<Space>
-cnoremap mk !command touch
-cnoremap cp !command cp -i
-cnoremap rm !command rm -i
-cnoremap git !command git
+"nnoremap cmd :!command<Space>
 
 "行末までヤンク
 nnoremap Y y$
 
 "ウィンドウ関連
 nnoremap s <Nop>
+nnoremap st gt
 nnoremap sh <C-w>h
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sw <C-w>w
 nnoremap s= <C-w>=
+call submode#enter_with('bufmove', 'n', '', 'st', 'gt')
 call submode#enter_with('bufmove', 'n', '', 'sw', '<C-w>w')
 call submode#enter_with('bufmove', 'n', '', 's.', '<C-w>>')
 call submode#enter_with('bufmove', 'n', '', 's,', '<C-w><')
 call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
 call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', 't', 'gt')
 call submode#map('bufmove', 'n', '', 'w', '<C-w>w')
 call submode#map('bufmove', 'n', '', '.', '<C-w>>')
 call submode#map('bufmove', 'n', '', ',', '<C-w><')
