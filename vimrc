@@ -16,12 +16,12 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
-NeoBundle 'scrooloose/nerdtree' "ファイルをツリーで表示
-NeoBundle 'nathanaelkane/vim-indent-guides' "インデントの視覚化
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'kana/vim-submode'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'nathanaelkane/vim-indent-guides' "インデントの視覚化
+NeoBundle 'scrooloose/nerdtree' "ファイルをツリーで表示
+NeoBundle 'scrooloose/syntastic'
 
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
@@ -47,6 +47,8 @@ set expandtab
 set cursorline "現在行を強調表示
 set smartindent "オートインデント
 set background=dark "配色の変更
+autocmd Colorscheme * highlight FullWidthSpace ctermbg=white "全角スペースの強調
+autocmd VimEnter * match FullWidthSpace /　/
 colorscheme desert "カラースキーマ
 highlight LineNr ctermfg=darkgray "行番号の色
 
@@ -70,9 +72,11 @@ let g:indent_guides_auto_colors=0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#444433 ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
 
-"ファイル形式がrubyの時だけコーディング規約チェック
+"ファイル形式がruby, tsの時だけコーディング規約チェック
 let g:syntastic_mode_map={'mode': 'active', 'active_filetypes': ['ruby']}
 let g:syntastic_ruby_checkers=['rubocop']
+let g:syntastic_mode_map={'mode': 'active', 'active_filetypes': ['typescript']}
+let g:syntastic_typescript_checkers=['tslint']
 
 "==================================================
 "キーバインド
