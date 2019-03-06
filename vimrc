@@ -63,6 +63,8 @@ set wrapscan "検索時に最後まで行ったら最初に戻る
 set hlsearch "検索語をハイライト表示
 nmap <Esc><Esc> :nohlsearch<CR><Esc> "Escでハイライトを解除
 
+set nobackup "バックアップをとらない
+
 set whichwrap=b,s,[,],<,> "カーソルの回りこみができるように
 
 "vim-indent-guidesをオンに
