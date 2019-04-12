@@ -104,15 +104,15 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 "Smart Inputの設定
 call smartinput#map_to_trigger('i', '<Space>', '<Space>', '<Space>')
 call smartinput#define_rule({
-	\	'at'    : '(\%#)',
-	\	'char'  : '<Space>',
-	\	'input' : '<Space><Space><Left>'
-	\	})
+  \ 'at'    : '(\%#)',
+  \ 'char'  : '<Space>',
+  \ 'input' : '<Space><Space><Left>'
+  \ })
 call smartinput#define_rule({
-	\	'at'    : '( \%# )',
-	\	'char'  : '<BS>',
-	\	'input' : '<Del><BS>'
-	\	})
+  \ 'at'    : '( \%# )',
+  \ 'char'  : '<BS>',
+  \ 'input' : '<Del><BS>'
+  \ })
 
 call smartinput#map_to_trigger('i', '<BS>', '<BS>', '<BS>')
 call smartinput#define_rule({
@@ -139,7 +139,7 @@ call smartinput#map_to_trigger('i', '<Bar>', '<Bar>', '<Bar>')
 call smartinput#define_rule({
   \   'at' : '\({\|\<do\>\)\s*\%#',
   \   'char' : '<Bar>',
-	\   'input' : '<Bar><Bar><Left>',
+  \   'input' : '<Bar><Bar><Left>',
   \   'filetype' : ['ruby']
   \    })
 
