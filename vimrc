@@ -9,6 +9,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'nathanaelkane/vim-indent-guides' "インデントの視覚化
 Plug 'scrooloose/nerdtree' "ファイルをツリーで表示
 Plug 'scrooloose/syntastic'
+Plug 'vim-airline/vim-airline' "ステータスバーの見た目を変更
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 "表示設定
@@ -41,6 +43,9 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc> "Escでハイライトを解除
 set nobackup "バックアップをとらない
 
 set whichwrap=b,s,[,],<,> "カーソルの回りこみができるように
+
+"vim-airline
+let g:airline_theme = 'violet'
 
 "vim-indent-guidesをオンに
 let g:indent_guides_enable_on_vim_startup = 1
