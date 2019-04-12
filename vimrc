@@ -1,40 +1,15 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
-
-if &compatible
-	set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath^=~/.vim/bundle/neobundle.vim/
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" My Bundles here:
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'kana/vim-submode'
-NeoBundle 'leafgarland/typescript-vim'
-NeoBundle 'nathanaelkane/vim-indent-guides' "インデントの視覚化
-NeoBundle 'scrooloose/nerdtree' "ファイルをツリーで表示
-NeoBundle 'scrooloose/syntastic'
-
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
-
-call neobundle#end()
-
-" Required:
+set nocompatible
 filetype plugin indent on
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-
+"プラグイン
+call plug#begin()
+Plug 'kana/vim-smartinput'
+Plug 'kana/vim-submode'
+Plug 'leafgarland/typescript-vim'
+Plug 'nathanaelkane/vim-indent-guides' "インデントの視覚化
+Plug 'scrooloose/nerdtree' "ファイルをツリーで表示
+Plug 'scrooloose/syntastic'
+call plug#end()
 
 "表示設定
 set number "行番号を表示する
