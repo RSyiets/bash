@@ -9,6 +9,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'nathanaelkane/vim-indent-guides' "インデントの視覚化
 Plug 'scrooloose/nerdtree' "ファイルをツリーで表示
 Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive' "Git操作
 Plug 'vim-airline/vim-airline' "ステータスバーの見た目を変更
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
