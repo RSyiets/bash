@@ -1,0 +1,11 @@
+#!/bin/bash
+
+trap 'echo Error: $0:$LINENO stopped; exit 1' ERR INT
+set -eu
+
+while read -r line
+do
+  echo -E -n "$line"
+  echo -e -n "\0"
+done
+

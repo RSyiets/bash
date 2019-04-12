@@ -48,7 +48,7 @@ lf()
     shift
   done
 
-  ls -d $(find $ARGS -maxdepth 1) | xargs readlink -f | xargs ls -dlh --color=auto $OPT
+  find $ARGS -maxdepth 1 -print0 | xargs -0 ls -d | ~/.shells/print0 | xargs -0 readlink -f | ~/.shells/print0 | xargs -0 ls -dlh --color=auto $OPT
 }
 
 cdls()
