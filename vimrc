@@ -9,6 +9,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'nathanaelkane/vim-indent-guides' "インデントの視覚化
 Plug 'scrooloose/nerdtree' "ファイルをツリーで表示
 Plug 'scrooloose/syntastic'
+Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive' "Git操作
 Plug 'vim-airline/vim-airline' "ステータスバーの見た目を変更
 Plug 'vim-airline/vim-airline-themes'
@@ -25,9 +26,10 @@ set expandtab
 set cursorline "現在行を強調表示
 set smartindent "オートインデント
 set background=dark "配色の変更
+set t_Co=256 "iTerm2など既に256色環境なら無くても良い
 autocmd Colorscheme * highlight FullWidthSpace ctermbg=white "全角スペースの強調
 autocmd VimEnter * match FullWidthSpace /　/
-colorscheme desert "カラースキーマ
+colorscheme molokai "カラースキーム
 highlight LineNr ctermfg=darkgray "行番号の色
 
 "ビープ音
