@@ -7,13 +7,13 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-submode'
 Plug 'leafgarland/typescript-vim'
-Plug 'nathanaelkane/vim-indent-guides' "インデントの視覚化
 Plug 'scrooloose/nerdtree' "ファイルをツリーで表示
 Plug 'scrooloose/syntastic'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive' "Git操作
 Plug 'vim-airline/vim-airline' "ステータスバーの見た目を変更
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine' "インデントの可視化
 call plug#end()
 
 "表示設定
@@ -50,13 +50,6 @@ set whichwrap=b,s,[,],<,> "カーソルの回りこみができるように
 
 "vim-airline
 let g:airline_theme = 'violet'
-
-"vim-indent-guidesをオンに
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level=2
-let g:indent_guides_auto_colors=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#444433 ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
 
 "ファイル形式がruby, tsの時だけコーディング規約チェック
 let g:syntastic_mode_map={'mode': 'active', 'active_filetypes': ['ruby']}
