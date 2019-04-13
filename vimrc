@@ -3,6 +3,7 @@ filetype plugin indent on
 
 "プラグイン
 call plug#begin()
+Plug 'bronson/vim-trailing-whitespace'
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-submode'
 Plug 'leafgarland/typescript-vim'
