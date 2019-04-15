@@ -3,13 +3,14 @@ filetype plugin indent on
 
 "プラグイン
 call plug#begin()
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'kana/vim-smartinput'
-Plug 'kana/vim-submode'
-Plug 'leafgarland/typescript-vim'
+Plug 'bronson/vim-trailing-whitespace' "文末スペースの視覚化
+Plug 'kana/vim-smartinput' "入力補助
+Plug 'kana/vim-submode' "コマンド入力補助
+Plug 'leafgarland/typescript-vim' "タイプスクリプト関連
 Plug 'scrooloose/nerdtree' "ファイルをツリーで表示
-Plug 'scrooloose/syntastic'
-Plug 'tomasr/molokai'
+Plug 'scrooloose/syntastic' "シンタックスチェッカー
+Plug 'tomasr/molokai' "カラースキーム
+Plug 'tomtom/tcomment_vim' "コメントアウトの簡易化
 Plug 'tpope/vim-fugitive' "Git操作
 Plug 'vim-airline/vim-airline' "ステータスバーの見た目を変更
 Plug 'vim-airline/vim-airline-themes'
