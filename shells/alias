@@ -36,6 +36,11 @@ hs()
   fi
 }
 
+gdiff()
+{
+  vim $2 "+:Gdiff $1"
+}
+
 lf()
 {
   while [ $1 ]
