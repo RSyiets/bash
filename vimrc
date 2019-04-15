@@ -15,6 +15,10 @@ Plug 'tpope/vim-fugitive' "Git操作
 Plug 'vim-airline/vim-airline' "ステータスバーの見た目を変更
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine' "インデントの可視化
+
+if v:version >= 800
+  Plug 'yuttie/comfortable-motion.vim' "スクロールをスムーズに行う
+endif
 call plug#end()
 
 "表示設定
@@ -99,6 +103,16 @@ call submode#map('bufmove', 'n', '', '.', '<C-w>>')
 call submode#map('bufmove', 'n', '', ',', '<C-w><')
 call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+
+"スクロール設定
+if v:version >= 800
+  let g:comfortable_motion_no_default_key_mappings = 1
+  nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
+  nnoremap <silent> <C-f> :call comfortable_motion#flick(-100)<CR>
+  nnoremap <silent> <C-u> :call comfortable_motion#flick(200)<CR>
+  nnoremap <silent> <C-b> :call comfortable_motion#flick(-200)<CR>
+endif
+"==================================================
 
 "Smart Inputの設定
 call smartinput#map_to_trigger('i', '<Space>', '<Space>', '<Space>')
