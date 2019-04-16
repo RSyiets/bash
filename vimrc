@@ -12,6 +12,7 @@ Plug 'scrooloose/syntastic' "シンタックスチェッカー
 Plug 'tomasr/molokai' "カラースキーム
 Plug 'tomtom/tcomment_vim' "コメントアウトの簡易化
 Plug 'tpope/vim-fugitive' "Git操作
+Plug 'tpope/vim-surround' "クオートの入力補助
 Plug 'vim-airline/vim-airline' "ステータスバーの見た目を変更
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine' "インデントの可視化
