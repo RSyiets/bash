@@ -7,6 +7,7 @@ Plug 'bronson/vim-trailing-whitespace' "文末スペースの視覚化
 Plug 'kana/vim-smartinput' "入力補助
 Plug 'kana/vim-submode' "コマンド入力補助
 Plug 'leafgarland/typescript-vim' "タイプスクリプト関連
+Plug 'reireias/vim-cheatsheet' "チートシートを表示
 Plug 'scrooloose/nerdtree' "ファイルをツリーで表示
 Plug 'scrooloose/syntastic' "シンタックスチェッカー
 Plug 'tomasr/molokai' "カラースキーム
@@ -165,3 +166,5 @@ call smartinput#define_rule({
 "TypeScriptのシンタックスハイライト
 autocmd BufRead,BufNewFile *.ts set filetype=typescript
 
+"チートシートの指定
+let g:cheatsheet#cheat_file = '~/.vim_cheatsheet'
