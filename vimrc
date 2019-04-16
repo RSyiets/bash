@@ -16,6 +16,11 @@ Plug 'vim-airline/vim-airline' "ステータスバーの見た目を変更
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine' "インデントの可視化
 
+Plug 'Shougo/neocomplcache.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Shougo/vimshell.vim'
+Plug 'Shougo/unite.vim'
+
 if v:version >= 800
   Plug 'yuttie/comfortable-motion.vim' "スクロールをスムーズに行う
 endif
