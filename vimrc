@@ -4,6 +4,7 @@ filetype plugin indent on
 "プラグイン
 call plug#begin()
 Plug 'bronson/vim-trailing-whitespace' "文末スペースの視覚化
+Plug 'elzr/vim-json' "JSONファイルの表示関連
 Plug 'kana/vim-smartinput' "入力補助
 Plug 'kana/vim-submode' "コマンド入力補助
 Plug 'leafgarland/typescript-vim' "タイプスクリプト関連
@@ -165,6 +166,9 @@ call smartinput#define_rule({
 
 "TypeScriptのシンタックスハイライト
 autocmd BufRead,BufNewFile *.ts set filetype=typescript
+
+"JSONの表示設定
+let g:vim_json_syntax_conceal = 0 "ダブルクォートを表示する
 
 "チートシートの指定
 let g:cheatsheet#cheat_file = '~/.vim_cheatsheet'
