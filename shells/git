@@ -20,6 +20,11 @@ function git(){
   fi
 }
 
+gdiff()
+{
+  vim $2 "+:Gdiff $1"
+}
+
 alias g='git'
 alias ga='git add'
 alias gb='git branch'
