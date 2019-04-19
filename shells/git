@@ -25,6 +25,8 @@ gdiff()
   vim $2 "+:Gdiff $1"
 }
 
+alias gstatus='vim "" +:Gstatus'
+
 alias g='git'
 alias ga='git add'
 alias gb='git branch'
