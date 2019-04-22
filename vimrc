@@ -83,7 +83,7 @@ nnoremap <C-f> <C-u>
 nnoremap <C-u> <C-f>
 
 "ディレクトリのツリー表示
-cnoremap tree NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 "unixコマンド
 "nnoremap cmd :!command<Space>

@@ -111,7 +111,7 @@
 -  :PlugInstall  : プラグインをインストール
 
 ## NERDTree
--  :tree  : NERDTreeを開く
+-  <C-n>  : NERDTreeを開く
 
 ## VimShell
 -  :VimShell : VimShellを開く
