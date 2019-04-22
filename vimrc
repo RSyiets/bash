@@ -40,6 +40,7 @@ set shiftwidth=2
 set expandtab
 set cursorline "現在行を強調表示
 set smartindent "オートインデント
+set laststatus=2 "ステータスラインを常に表示(NERDTreeをデフォルト非表示)
 set background=dark "配色の変更
 set t_Co=256 "iTerm2など既に256色環境なら無くても良い
 autocmd Colorscheme * highlight FullWidthSpace ctermbg=white "全角スペースの強調
