@@ -128,3 +128,9 @@
 -  :Gwrite   : 開いているファイルをgit add
 -  :Gremove  : 開いているファイルをgit rm
 -  :Gblame   : 開いているファイルをgit blame
+
+## Gstatus中の操作
+-  C  : コミット
+-  D  : diffを表示
+-  p  : パッチを表示
+-  -  : ステージングの切り替え
