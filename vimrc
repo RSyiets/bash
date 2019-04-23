@@ -47,6 +47,7 @@ autocmd Colorscheme * highlight FullWidthSpace ctermbg=white "全角スペース
 autocmd VimEnter * match FullWidthSpace /　/
 colorscheme molokai "カラースキーム
 highlight LineNr ctermfg=darkgray "行番号の色
+highlight Comment ctermfg=6 "コメントの色
 
 "ビープ音
 set visualbell "鳴らないようにする
