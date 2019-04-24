@@ -116,6 +116,10 @@
 ## VimShell
 -  :VimShell : VimShellを開く
 
+## vim-quickhl
+-  <Space>m : 単語をハイライト/ハイライトの解除
+-  <Space>M : 単語のハイライトを全解除
+
 ## vim-surround
 -  S'   : 選択範囲をシングルクォートで囲む
 -  ds'  : シングルクォートを削除

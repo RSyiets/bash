@@ -15,6 +15,7 @@ Plug 'tomasr/molokai'             "カラースキーム
 Plug 'tomtom/tcomment_vim'        "コメントアウトの簡易化
 Plug 'tpope/vim-fugitive'         "Git操作
 Plug 'tpope/vim-surround'         "クオートの入力補助
+Plug 't9md/vim-quickhl'           "簡易検索
 Plug 'vim-airline/vim-airline'    "ステータスバーの見た目を変更
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'        "インデントの可視化
@@ -80,6 +81,12 @@ set hlsearch   "検索語をハイライト表示
 
 "Escでハイライトを解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+"vim-quickhlのキーバインド
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
 
 "==================================================
 "バックアップ
