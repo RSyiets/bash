@@ -22,7 +22,7 @@ function git(){
 
 gdiff()
 {
-  vim $2 "+:Gdiff $1"
+  vim $2 "+:Gvdiff $1"
 }
 
 alias gstatus='vim "" +:Gstatus +:only'
