@@ -200,5 +200,39 @@ call smartinput#define_rule({
   \    })
 
 "==================================================
+"neocomplcacheの設定
+
+"neocomplcacheを有効化
+let g:neocomplcache_enable_at_startup = 1
+"smartcaseを有効化
+let g:neocomplcache_enable_smart_case = 1
+"補完を行う最小の長さを設定
+let g:neocomplcache_min_syntax_length = 3
+"文字入力時にのみポップアップを出す
+let g:neocomplcache_enable_insert_char_pre = 1
+
+"辞書の定義
+let g:neocomplcache_dictionary_filetype_lists = {
+  \ 'default' : ''
+  \ }
+
+"前回行われた補完をキャンセルする
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+"補完候補の中から共通する部分を補完する
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+"エンターキーで候補を確定
+inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+"次の候補を選択
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"文字を削除した時にポップアップを閉じる
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+"選択している候補を確定する
+inoremap <expr><C-y>  neocomplcache#close_popup()
+"選択している候補をキャンセルしてポップアップを閉じる
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+"==================================================
 "チートシートの指定
 let g:cheatsheet#cheat_file = '~/.vim_cheatsheet'
