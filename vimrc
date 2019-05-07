@@ -20,10 +20,20 @@ Plug 'vim-airline/vim-airline'    "ステータスバーの見た目を変更
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'        "インデントの可視化
 
-Plug 'Shougo/neocomplcache.vim'
+if(!has('python3'))
+  Plug 'Shougo/neocomplcache.vim'
+elseif(has('nvim'))
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'Shougo/neco-vim'
+Plug 'Shougo/neco-syntax'
+Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/vimshell.vim'
-Plug 'Shougo/unite.vim'
 
 if v:version >= 800
   Plug 'yuttie/comfortable-motion.vim' "スクロールをスムーズに行う
@@ -48,6 +58,7 @@ set smartindent     "オートインデント
 set laststatus=2    "ステータスラインを常に表示(NERDTreeをデフォルト非表示)
 set background=dark "配色の変更
 set t_Co=256        "iTerm2など既に256色環境なら無くても良い
+set encoding=utf-8
 
 "全角スペースの強調
 autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
@@ -202,36 +213,68 @@ call smartinput#define_rule({
 "==================================================
 "neocomplcacheの設定
 
-"neocomplcacheを有効化
-let g:neocomplcache_enable_at_startup = 1
-"smartcaseを有効化
-let g:neocomplcache_enable_smart_case = 1
-"補完を行う最小の長さを設定
-let g:neocomplcache_min_syntax_length = 3
-"文字入力時にのみポップアップを出す
-let g:neocomplcache_enable_insert_char_pre = 1
+if(!has('python3'))
+  "neocomplcacheを有効化
+  let g:neocomplcache_enable_at_startup = 1
+  "smartcaseを有効化
+  let g:neocomplcache_enable_smart_case = 1
+  "補完を行う最小の長さを設定
+  let g:neocomplcache_min_syntax_length = 3
+  "文字入力時にのみポップアップを出す
+  let g:neocomplcache_enable_insert_char_pre = 1
 
-"辞書の定義
-let g:neocomplcache_dictionary_filetype_lists = {
-  \ 'default' : ''
-  \ }
+  "辞書の定義
+  let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : ''
+    \ }
 
-"前回行われた補完をキャンセルする
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-"補完候補の中から共通する部分を補完する
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
+  "前回行われた補完をキャンセルする
+  inoremap <expr><C-g>     neocomplcache#undo_completion()
+  "補完候補の中から共通する部分を補完する
+  inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
-"エンターキーで候補を確定
-inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
-"次の候補を選択
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"文字を削除した時にポップアップを閉じる
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-"選択している候補を確定する
-inoremap <expr><C-y>  neocomplcache#close_popup()
-"選択している候補をキャンセルしてポップアップを閉じる
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+  "エンターキーで候補を確定
+  inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+  "次の候補を選択
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  "文字を削除した時にポップアップを閉じる
+  inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+  "選択している候補を確定する
+  inoremap <expr><C-y>  neocomplcache#close_popup()
+  "選択している候補をキャンセルしてポップアップを閉じる
+  inoremap <expr><C-e>  neocomplcache#cancel_popup()
+endif
+
+"==================================================
+"deopleteの設定
+
+if(has('python3'))
+  "deopleteを有効化
+  let g:deoplete#enable_at_startup = 1
+
+  call deoplete#custom#option({
+    \ 'auto_complete_delay': 100,
+    \ 'smart_case': v:true,
+    \ })
+
+  "前回行われた補完をキャンセルする
+  inoremap <expr><C-g>     deoplete#undo_completion()
+  "補完候補の中から共通する部分を補完する
+  inoremap <expr><C-l>     deoplete#complete_common_string()
+
+  "エンターキーで候補を確定
+  inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+  "次の候補を選択
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  "文字を削除した時にポップアップを閉じる
+  inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
+  "選択している候補を確定する
+  inoremap <expr><C-y>  deoplete#close_popup()
+  "選択している候補をキャンセルしてポップアップを閉じる
+  inoremap <expr><C-e>  deoplete#cancel_popup()
+endif
 
 "==================================================
 "チートシートの指定
