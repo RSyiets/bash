@@ -126,6 +126,14 @@ let g:syntastic_typescript_checkers=['tslint']
 "全てのウインドウを閉じる
 nnoremap qa :qall<CR>
 
+"全角入力時用
+nnoremap クァ :qall<CR>
+nnoremap ：q :q<CR>
+nnoremap ：q！ :q!<CR>
+nnoremap ：w :w<CR>
+nnoremap い i
+nnoremap ・ /
+
 "上半ページ移動を片手でできるように
 nnoremap <C-f> <C-u>
 nnoremap <C-u> <C-f>
