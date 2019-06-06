@@ -262,26 +262,19 @@ if(has('python3'))
   let g:deoplete#enable_at_startup = 1
 
   call deoplete#custom#option({
-    \ 'auto_complete_delay': 100,
+    \ 'auto_complete_delay': 200,
     \ 'smart_case': v:true,
+    \ 'on_insert_enter': v:false,
     \ })
 
-  "前回行われた補完をキャンセルする
-  inoremap <expr><C-g>     deoplete#undo_completion()
-  "補完候補の中から共通する部分を補完する
-  inoremap <expr><C-l>     deoplete#complete_common_string()
+  set completeopt+=noinsert
 
-  "エンターキーで候補を確定
+  " エンターキーで候補を確定
   inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
-  "次の候補を選択
+  " 次の候補を選択
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  "文字を削除した時にポップアップを閉じる
-  inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+  " "文字を削除した時にポップアップを閉じる
   inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
-  "選択している候補を確定する
-  inoremap <expr><C-y>  deoplete#close_popup()
-  "選択している候補をキャンセルしてポップアップを閉じる
-  inoremap <expr><C-e>  deoplete#cancel_popup()
 endif
 
 "==================================================
