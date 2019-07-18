@@ -93,6 +93,12 @@ alias lg='ls -g'
 alias la='ls -A'
 alias l='ls -CF'
 
+# ls settings on MacOS
+if [ "`uname`" == "Darwin" ]; then
+  alias ls='ls -G'
+  export LSCOLORS=gxfxcxdxbxegedabagacad
+fi
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
