@@ -112,6 +112,26 @@ set whichwrap=b,s,[,],<,> "カーソルの回りこみができるように
 let g:airline_theme = 'violet'
 
 "==================================================
+"貼り付け設定
+
+"ビジュアルモードで連続ペーストをできるようにする
+function! Put_text_without_override_register()
+  let line_len = strlen(getline('.'))
+  execute "normal! `>"
+  let col_loc = col('.')
+  execute 'normal! gv"_x'
+  if line_len == col_loc
+    execute 'normal! p'
+  else
+    execute 'normal! P'
+  endif
+endfunction
+xnoremap <silent> p :call Put_text_without_override_register()<CR>
+
+"ヤンクした内容をクリップボードにコピー
+set clipboard=unnamed
+
+"==================================================
 "シンタックスチェッカー
 
 "ファイル形式がruby, tsの時だけコーディング規約チェック
