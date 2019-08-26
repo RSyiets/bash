@@ -7,8 +7,8 @@ alias shutdown='sudo /sbin/shutdown -h now'
 alias reboot='sudo /sbin/shutdown -r now'
 alias vimt='vim -c NERDTree'
 alias blue='echo -e "\e[44m"; echo -e "\e[40m"'
-# Set a clock by JMT.
-alias setclock='ntpdate -v ntp.nict.jp'
+alias setclock='ntpdate -v ntp.nict.jp' # Set a clock by JMT.
+alias yaml="ruby -r yaml -r pp -e 'pp YAML.load(ARGF.read())'" # Load yaml.
 
 alias remove='rm -i'
 alias copy='cp -i'
