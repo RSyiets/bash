@@ -36,6 +36,16 @@ hs()
   fi
 }
 
+hv()
+{
+  expr "$2" + 1 > /dev/null 2>&1
+  if [ $? -lt 2 ]; then
+    history | grep -E "$1" | tail -$2 | cut -c 8- | view -
+  else
+    history | grep -E "$1" | tail | cut -c 8- | view -
+  fi
+}
+
 lf()
 {
   while [ $1 ]
