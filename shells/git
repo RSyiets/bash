@@ -4,22 +4,6 @@ function gc(){
   git commit -m "$*"
 }
 
-function git(){
-  if [ "$1" = "fo" ]; then
-    ~/bin/git-foresta --style=10 | less -RCS
-  elif [ "$1" = "fa" ]; then
-    ~/bin/git-foresta --all --style=10 | less -RCS
-  elif [ "$1" = "fox" ]; then
-    ~/bin/git-foresta --style=10 | less -RCSX
-  elif [ "$1" = "fax" ]; then
-    ~/bin/git-foresta --all --style=10 | less -RCSX
-  elif [ "$1" = "op" ]; then
-    git --no-pager log -1 | head -1 | cut -d " " -f 2
-  else
-    command git "$@"
-  fi
-}
-
 gdiff()
 {
   vim $2 "+:Gvdiff $1"
@@ -45,8 +29,13 @@ git config --global alias.pushall '!f(){ for i in `git remote`; do git push $i $
 git config --global alias.fetchall '!f(){ for i in `git remote`; do git fetch --prune $i; done; };f'
 git config --global alias.rename 'branch -m'
 git config --global alias.graph 'log --oneline --decorate --graph'
-git config --global alias.l 'log --graph --all --date=short --date-order --pretty=format:\"%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)\'
-git config --globa alias.lb 'log --graph --date=short --date-order --pretty=format:\"%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)\'
+git config --global alias.l 'log --graph --all --date=short --date-order --pretty=format:"%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)"'
+git config --global alias.lb 'log --graph --date=short --date-order --pretty=format:"%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)"'
+git config --global alias.fo '!~/bin/git-foresta --style=10 | less -RCS'
+git config --global alias.fa '!~/bin/git-foresta --all --style=10 | less -RCS'
+git config --global alias.fox '!~/bin/git-foresta --style=10 | less -RCSX'
+git config --global alias.fax '!~/bin/git-foresta --all --style=10 | less -RCSX'
+git config --global alias.op '!git --no-pager log -1 | head -1 | cut -d " " -f 2'
 
 git config --global merge.tool vimdiff
 git config --global core.editor vim
