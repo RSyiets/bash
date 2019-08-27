@@ -172,6 +172,10 @@ nnoremap sh <C-w>h
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
+nnoremap sH <C-w>H
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
 nnoremap sw <C-w>w
 nnoremap s= <C-w>=
 call submode#enter_with('bufmove', 'n', '', 'st', 'gt')
