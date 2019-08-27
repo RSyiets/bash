@@ -1,5 +1,14 @@
 #!/bin/bash
 
+GARUPA=(kasumi tae rimi arisa saya \
+        ran mocha himari tsugumi tomoe \
+        aya hina chisato eve maya \
+        yukina sayo risa rinko ako \
+        kokoro kaoru hagumi michelle kanon \
+        reiya lock masking pareo chuchu \
+        marina misaki)
+alias garupa='echo ${GARUPA[$((RANDOM % 32))]}'
+
 alias le='less -RCS'
 alias lx='less -RCSX'
 alias nginx='/etc/init.d/nginx'
