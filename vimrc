@@ -75,6 +75,13 @@ highlight Comment ctermfg=6
 "TypeScriptのシンタックスハイライト
 autocmd BufRead,BufNewFile *.ts set filetype=typescript
 
+"背景の透過設定
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight LineNr ctermbg=none
+highlight Folded ctermbg=none
+highlight EndOfBuffer ctermbg=none
+
 "JSONの表示設定
 let g:vim_json_syntax_conceal = 0 "ダブルクォートを表示する
 

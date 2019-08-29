@@ -125,7 +125,7 @@ if [ -e .shells/local ]; then
   source .shells/local
 fi
 
-PS1='\[\e[38;5;181m\e[40m\][\u@\h \W]\[\e[0m\]\$ '
+PS1='\[\e[38;5;181m\e[49m\][\u@\h \W]\[\e[0m\]\$ '
 
 if [ -e kurako.sh ]; then
   ./kurako.sh
