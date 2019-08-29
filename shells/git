@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#Completion setting for Mac
+if [ "`uname`" == "Darwin" ]; then
+  source /usr/local/etc/bash_completion.d/git-prompt.sh
+  source /usr/local/etc/bash_completion.d/git-completion.bash
+fi
+
 function gc(){
   git commit -m "$*"
 }
