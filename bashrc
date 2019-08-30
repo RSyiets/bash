@@ -96,7 +96,7 @@ alias l='ls -CF'
 # ls settings on MacOS
 if [ "`uname`" == "Darwin" ]; then
   alias ls='ls -G'
-  export LSCOLORS=gxfxcxdxbxegedabagacad
+  export LSCOLORS=Exfxcxdxbxegedabagacad
 fi
 
 # Alias definitions.
