@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Completion setting for Mac
+# Completion setting for Mac
 if [ "`uname`" == "Darwin" ]; then
   source /usr/local/etc/bash_completion.d/git-prompt.sh
   source /usr/local/etc/bash_completion.d/git-completion.bash
