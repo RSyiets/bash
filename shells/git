@@ -42,6 +42,10 @@ git config --global alias.fa '!~/bin/git-foresta --all --style=10 | less -RCS'
 git config --global alias.fox '!~/bin/git-foresta --style=10 | less -RCSX'
 git config --global alias.fax '!~/bin/git-foresta --all --style=10 | less -RCSX'
 git config --global alias.op '!git --no-pager log -1 | head -1 | cut -d " " -f 2'
+git config --global alias.br 'branch'
+git config --global alias.co 'checkout'
+git config --global alias.st 'status'
+git config --global alias.slaughter '!git reflog expire --expire=now --all | git gc --aggressive --prune=now'
 
 git config --global merge.tool vimdiff
 git config --global core.editor vim
