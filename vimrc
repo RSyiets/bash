@@ -81,6 +81,19 @@ highlight NonText ctermbg=none
 highlight LineNr ctermbg=none
 highlight Folded ctermbg=none
 highlight EndOfBuffer ctermbg=none
+let s:background_transparence = 1
+
+function! Switch_background_transparency()
+  if s:background_transparence == 0
+    highlight Normal ctermbg=none
+    let s:background_transparence = 1
+  else
+    highlight Normal ctermbg=232 "背景を黒に設定
+    let s:background_transparence = 0
+  endif
+endfunction
+
+command! Trans :call Switch_background_transparency()
 
 "JSONの表示設定
 let g:vim_json_syntax_conceal = 0 "ダブルクォートを表示する
