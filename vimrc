@@ -18,6 +18,7 @@ Plug 'tpope/vim-surround'         "クオートの入力補助
 Plug 't9md/vim-quickhl'           "簡易検索
 Plug 'vim-airline/vim-airline'    "ステータスバーの見た目を変更
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-jp/vimdoc-ja'           "helpの日本語化
 Plug 'Yggdroot/indentLine'        "インデントの可視化
 
 if(!has('python3'))
@@ -39,6 +40,10 @@ if v:version >= 800
   Plug 'yuttie/comfortable-motion.vim' "スクロールをスムーズに行う
 endif
 call plug#end()
+
+"==================================================
+"言語設定
+set helplang=ja,en "helpをデフォルトで日本語表示
 
 "==================================================
 "表示設定
