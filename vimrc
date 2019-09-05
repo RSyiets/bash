@@ -8,6 +8,7 @@ Plug 'elzr/vim-json'              "JSONファイルの表示関連
 Plug 'kana/vim-smartinput'        "入力補助
 Plug 'kana/vim-submode'           "コマンド入力補助
 Plug 'leafgarland/typescript-vim' "タイプスクリプト関連
+Plug 'mustache/vim-mustache-handlebars' "mustacheテンプレートのハイライトなど
 Plug 'reireias/vim-cheatsheet'    "チートシートを表示
 Plug 'scrooloose/nerdtree'        "ファイルをツリーで表示
 Plug 'scrooloose/syntastic'       "シンタックスチェッカー
