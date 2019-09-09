@@ -21,6 +21,7 @@ Plug 'vim-airline/vim-airline'    "ステータスバーの見た目を変更
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-jp/vimdoc-ja'           "helpの日本語化
 Plug 'Yggdroot/indentLine'        "インデントの可視化
+Plug 'RSyiets/vim-git-foresta'    "vimでgit-forestaを使えるようにする
 
 if(!has('python3'))
   Plug 'Shougo/neocomplcache.vim'
@@ -327,6 +328,10 @@ if(has('python3'))
   " "文字を削除した時にポップアップを閉じる
   inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 endif
+
+"==================================================
+"vim-gitforestaの設定
+let g:gitforesta#executable_path = '~/bin/git-foresta'
 
 "==================================================
 "チートシートの指定
