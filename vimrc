@@ -4,6 +4,7 @@ filetype plugin indent on
 "プラグイン
 call plug#begin()
 Plug 'bronson/vim-trailing-whitespace' "文末スペースの視覚化
+Plug 'chase/vim-ansible-yaml'     "yamlファイルのハイライトとインデント補助
 Plug 'elzr/vim-json'              "JSONファイルの表示関連
 Plug 'kana/vim-smartinput'        "入力補助
 Plug 'kana/vim-submode'           "コマンド入力補助
@@ -81,6 +82,10 @@ highlight Comment ctermfg=6
 
 "TypeScriptのシンタックスハイライト
 autocmd BufRead,BufNewFile *.ts set filetype=typescript
+
+"yamlのシンタックスハイライト
+autocmd BufRead,BufNewFile *.yaml set filetype=ansible
+autocmd BufRead,BufNewFile *.yml set filetype=ansible
 
 "背景の透過設定
 highlight Normal ctermbg=none
