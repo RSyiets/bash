@@ -5,7 +5,7 @@ GARUPA=(kasumi tae rimi arisa saya \
         aya hina chisato eve maya \
         yukina sayo risa rinko ako \
         kokoro kaoru hagumi michelle kanon \
-        reiya lock masking pareo chuchu \
+        layer lock masking pareo chuchu \
         marina misaki)
 alias garupa='echo ${GARUPA[$((RANDOM % 32))]}'
 
